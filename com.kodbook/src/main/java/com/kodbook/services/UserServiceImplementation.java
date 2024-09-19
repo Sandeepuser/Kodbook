@@ -36,4 +36,14 @@ public class UserServiceImplementation implements UserService{
 		return false;
 	}
 
+	@Override
+	public User getUser(String username) {
+		return repo.findByUsername(username);
+		}
+
+	@Override
+	public void updateUser(User user) {
+            repo.save(user);		
+	}
+
 }

@@ -19,22 +19,32 @@ public class Post {
 	private int likes;
 
 	private List<String> comments;
+	@ManyToOne
+	private User user;
 
 	@Lob
-	@Basic(fetch=FetchType.LAZY)
+	@Basic(fetch = FetchType.LAZY)
 	@Column(columnDefinition = "LONGBLOB")
 	private byte[] photo;
+
+	public String getPhotoBase64() {
+		if (photo == null) {
+			return null;
+		}
+		return Base64.getEncoder().encodeToString(photo);
+	}
 
 	public Post() {
 		this.comments = new ArrayList<>();
 	}
 
-	// Constructor with fields
-	public Post(Long id, String caption, int likes, List<String> comments, byte[] photo) {
+	public Post(Long id, String caption, int likes, List<String> comments, User user, byte[] photo) {
+		super();
 		this.id = id;
 		this.caption = caption;
 		this.likes = likes;
-		this.comments = comments != null ? comments : new ArrayList<>();
+		this.comments = comments;
+		this.user = user;
 		this.photo = photo;
 	}
 
@@ -83,17 +93,18 @@ public class Post {
 		this.photo = photo;
 	}
 
-	public String getPhotoBase64() {
-		if (photo == null) {
-			return null;
-		}
-		return Base64.getEncoder().encodeToString(photo);
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	@Override
 	public String toString() {
-		return "Post [id=" + id + ", caption=" + caption + ", likes=" + likes + ", comments=" + comments + ", photo="
-				+ Arrays.toString(photo) + "]";
+		return "Post [id=" + id + ", caption=" + caption + ", likes=" + likes + ", comments=" + comments + ", user="
+				+ user + ", photo=" + Arrays.toString(photo) + "]";
 	}
 
 }

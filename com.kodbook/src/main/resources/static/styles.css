@@ -1,0 +1,126 @@
+/* Importing fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;  /* Modern and clean font */
+    background: linear-gradient(135deg, #e0e0e0, #ffffff); /* Soft gradient background */
+    color: #333; /* Dark text color for readability */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Align elements vertically */
+}
+
+h1 {
+    color: #0056b3; /* Dark blue color for heading */
+    font-family: 'Poppins', sans-serif; /* Modern and bold font for headings */
+    font-size: 2.8em;
+    text-align: center;
+    margin: 0; /* Remove margin to reduce space between heading and form */
+    font-weight: 600; /* Bold text for emphasis */
+}
+
+hr {
+    width: 80%;
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 1em 0; /* Space around the horizontal rule */
+}
+
+form {
+    background-color: #ffffff; /* White background for form */
+    border-radius: 12px; /* Rounded corners */
+    padding: 30px;
+    width: 350px;
+    max-width: 90%; /* Responsive design */
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
+    text-align: center;
+    animation: fadeIn 0.8s ease-out; /* Fade-in animation */
+    margin: 0; /* Remove margin to ensure no space between form and heading */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="date"] {
+    width: calc(100% - 24px); /* Adjust width for padding and border */
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #00796b; /* Teal border */
+    border-radius: 8px; /* Slightly rounded corners */
+    background-color: #f1f8e9; /* Light green background */
+    color: #333;
+    font-size: 1em;
+    transition: border-color 0.3s, background-color 0.3s; /* Smooth transitions */
+    font-family: 'Roboto', sans-serif; /* Consistent font for inputs */
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus {
+    border-color: #004d40; /* Dark teal border on focus */
+    background-color: #ffffff; /* White background on focus */
+    outline: none;
+}
+
+label {
+    font-size: 1em;
+    color: #333; /* Dark color for labels */
+    font-family: 'Roboto', sans-serif; /* Consistent font for labels */
+    display: block; /* Block display for spacing consistency */
+    margin: 5px 0; /* Margin around labels */
+}
+
+.radio-group {
+    display: inline-flex; /* Align items in a row */
+    justify-content: space-between; /* Even space between items */
+    gap: 10px; /* Space between radio buttons */
+    margin: 10px 0; /* Margin for spacing around the group */
+}
+
+input[type="radio"] {
+    accent-color: #00796b; /* Teal for radio buttons */
+}
+
+input[type="submit"] {
+    background-color: #00796b; /* Teal background */
+    color: #ffffff;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    font-family: 'Poppins', sans-serif; /* Bold font for submit button */
+}
+
+input[type="submit"]:hover {
+    background-color: #004d40; /* Darker teal on hover */
+    transform: translateY(-3px); /* Lift effect on hover */
+}
+
+a {
+    display: inline-block;
+    margin-top: 15px;
+    text-decoration: none;
+    color: #00796b; /* Teal color for links */
+    font-size: 1em;
+    transition: color 0.3s, text-decoration 0.3s; /* Smooth transitions */
+    font-family: 'Roboto', sans-serif; /* Consistent font for links */
+}
+
+a:hover {
+    color: #004d40; /* Darker teal on hover */
+    text-decoration: underline; /* Underline effect on hover */
+}
