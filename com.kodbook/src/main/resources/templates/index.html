@@ -1,27 +1,24 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="ISO-8859-1">
-<title>KodBook</title>
-	<link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
-
-</head>
-<body>
-
-	<h1>Welcome to KodBook!!</h1>
-	<hr>
-	<form action="/login" method="post">
-	<label>USERNAME:</label>
-	<input type="text" name="username" placeholder="Enter Username">
-	<br><br>
-	<label>PASSWORD:</label>
-	<input type="password" name="password" placeholder="Enter Password">
-	<br><br>
-	
-	<input type="submit" value="LOGIN">
-	<hr>
-	<a href = "/openResetPassword">Forgot Password?</a>
-	<a href = "/openSignUp">Create new account</a>
-	</form>
-</body>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>KodBook</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/styles.css}">
+	</head>
+	<body>
+		<h1>KodBook</h1>
+		<hr>
+		<form action="/login" method="post">
+			<input type = "text" name = "username" placeholder="Enter Username">
+			<br><br>
+			
+			<input type = "password" name = "password" placeholder="Enter Password">
+			<br><br>
+			
+			<input type="submit" value = "LOGIN">
+			<hr>
+			<a href = "/openResetPassword">Forgot password?</a>
+			<a href = "/openSignUp">Create new account</a>
+		</form>
+	</body>
 </html>

@@ -1,126 +1,125 @@
-/* Importing fonts from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap');
-
+/* Body styling with Flexbox for centering */
 body {
-    font-family: 'Roboto', sans-serif;  /* Modern and clean font */
-    background: linear-gradient(135deg, #e0e0e0, #ffffff); /* Soft gradient background */
-    color: #333; /* Dark text color for readability */
+    font-family: 'Roboto', sans-serif;  /* Clean and modern font */
+    background-color: #2C3E50;          /* Dark blue-gray background */
+    color: #ECF0F1;                     /* Light text */
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    flex-direction: column; /* Align elements vertically */
+    overflow: hidden;                    /* Hide potential scrollbars during animation */
 }
 
+/* Heading Styling with reduced margin */
 h1 {
-    color: #0056b3; /* Dark blue color for heading */
-    font-family: 'Poppins', sans-serif; /* Modern and bold font for headings */
-    font-size: 2.8em;
+    color: #E74C3C;                     /* Vivid red color */
+    font-size: 2.8em;                    /* Slightly smaller font size */
     text-align: center;
-    margin: 0; /* Remove margin to reduce space between heading and form */
-    font-weight: 600; /* Bold text for emphasis */
+    margin-bottom: 0.3em;                /* Reduced margin for a closer look */
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    opacity: 0;                          /* Start invisible for animation */
+    animation: fadeInSlide 1s ease-out forwards;  /* Fade-in and slide down */
 }
 
-hr {
-    width: 80%;
-    border: 0;
-    height: 1px;
-    background: #ccc;
-    margin: 1em 0; /* Space around the horizontal rule */
+/* Line under the heading */
+h1::after {
+    content: '';
+    display: block;
+    width: 60px;                         /* Smaller size */
+    height: 3px;                         /* Thicker line */
+    background-color: #1ABC9C;           /* Soft green-turquoise color */
+    margin: 0.2em auto;                  /* Tighter margin for a cleaner look */
+    opacity: 0;                          /* Start invisible */
+    animation: fadeInSlide 1.2s ease-out forwards; /* Similar animation as heading */
 }
 
+/* Form styling with animation */
 form {
-    background-color: #ffffff; /* White background for form */
-    border-radius: 12px; /* Rounded corners */
-    padding: 30px;
-    width: 350px;
-    max-width: 90%; /* Responsive design */
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Soft shadow for floating effect */
+    background-color: #34495E;           /* Darker gray-blue background */
+    border-radius: 10px;
+    padding: 40px;
+    width: 380px;                        /* Slightly narrower form */
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.4);  /* Softer shadow for depth */
     text-align: center;
-    animation: fadeIn 0.8s ease-out; /* Fade-in animation */
-    margin: 0; /* Remove margin to ensure no space between form and heading */
+    opacity: 0;                          /* Start invisible */
+    transform: translateY(40px);          /* Start slightly below */
+    animation: fadeInSlide 1.3s ease-out forwards; /* Slide and fade-in */
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
+/* Input fields */
 input[type="text"], input[type="password"], input[type="email"], input[type="date"] {
-    width: calc(100% - 24px); /* Adjust width for padding and border */
-    padding: 12px;
+    width: 100%;
+    padding: 10px;
     margin: 10px 0;
-    border: 1px solid #00796b; /* Teal border */
-    border-radius: 8px; /* Slightly rounded corners */
-    background-color: #f1f8e9; /* Light green background */
-    color: #333;
+    border: 2px solid #1ABC9C;           /* Softer turquoise border */
+    border-radius: 6px;
+    background-color: #3D566E;           /* Darker input background */
+    color: #ECF0F1;                      /* Light text inside inputs */
     font-size: 1em;
-    transition: border-color 0.3s, background-color 0.3s; /* Smooth transitions */
-    font-family: 'Roboto', sans-serif; /* Consistent font for inputs */
+    transition: border 0.3s ease, background-color 0.3s ease; /* Smooth transitions */
 }
 
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="date"]:focus {
-    border-color: #004d40; /* Dark teal border on focus */
-    background-color: #ffffff; /* White background on focus */
-    outline: none;
+    border-color: #E74C3C;               /* Warm border color on focus */
+    background-color: #4C6A85;           /* Slight change on focus */
 }
 
+/* Radio buttons */
 label {
-    font-size: 1em;
-    color: #333; /* Dark color for labels */
-    font-family: 'Roboto', sans-serif; /* Consistent font for labels */
-    display: block; /* Block display for spacing consistency */
-    margin: 5px 0; /* Margin around labels */
-}
-
-.radio-group {
-    display: inline-flex; /* Align items in a row */
-    justify-content: space-between; /* Even space between items */
-    gap: 10px; /* Space between radio buttons */
-    margin: 10px 0; /* Margin for spacing around the group */
+    font-size: 1.1em;
+    color: #ECF0F1;
 }
 
 input[type="radio"] {
-    accent-color: #00796b; /* Teal for radio buttons */
+    margin: 0 6px;
+    accent-color: #E74C3C;               /* Warm accent color */
 }
 
+/* Submit button */
 input[type="submit"] {
-    background-color: #00796b; /* Teal background */
-    color: #ffffff;
-    padding: 12px 24px;
+    background-color: #1ABC9C;           /* Soft green-turquoise color */
+    color: white;
+    padding: 10px 35px;
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transitions */
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    font-family: 'Poppins', sans-serif; /* Bold font for submit button */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    display: block;
+    margin: 15px auto 0;                 /* Reduced space above and centered */
 }
 
 input[type="submit"]:hover {
-    background-color: #004d40; /* Darker teal on hover */
-    transform: translateY(-3px); /* Lift effect on hover */
+    background-color: #E74C3C;           /* Warm red on hover */
+    transform: scale(1.04);              /* Slightly enlarge the button */
+    box-shadow: 0px 4px 12px rgba(231, 76, 60, 0.7); /* Add shadow effect */
 }
 
+/* Links */
 a {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 15px;                    /* Less margin between button and links */
     text-decoration: none;
-    color: #00796b; /* Teal color for links */
+    color: #1ABC9C;                      /* Cool link color */
     font-size: 1em;
-    transition: color 0.3s, text-decoration 0.3s; /* Smooth transitions */
-    font-family: 'Roboto', sans-serif; /* Consistent font for links */
 }
 
 a:hover {
-    color: #004d40; /* Darker teal on hover */
-    text-decoration: underline; /* Underline effect on hover */
+    color: #E74C3C;                      /* Change color on hover */
+}
+
+/* Keyframes for page load transitions */
+@keyframes fadeInSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -1,4 +1,4 @@
-/* General body styling */
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,7 +7,7 @@ body {
     color: #333;
 }
 
-/* Navigation bar styling */
+Navigation bar styling
 nav {
     background-color: #333;
     padding: 10px;
@@ -30,7 +30,7 @@ nav span {
     margin-right: 20px;
 }
 
-/* Form and input styling */
+Form and input styling
 form {
     margin: 20px;
 }
@@ -67,16 +67,17 @@ form input[type="submit"]:hover {
     background-color: #ff9800;
 }
 
-/* Profile picture styling */
+Profile picture styling
 .profile-pic {
-    width: 40px; /* Adjust size as needed */
-    height: 40px; /* Adjust size as needed */
-    border-radius: 50%; /* Makes the image circular */
-    object-fit: cover; /* Ensures the image covers the entire space */
-    margin-left: auto; /* Pushes it to the right if needed */
+    width: 40px; Adjust size as needed
+    height: 40px; Adjust size as needed
+    border-radius: 50%; Makes the image circular
+    object-fit: cover; Ensures the image covers the entire space
+    margin-left: auto; Pushes it to the right if needed
 }
 
-/* Icon styling */
+Icon styling
 nav i {
     margin-right: 8px;
 }
+ */
